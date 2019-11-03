@@ -1,6 +1,6 @@
-# :wave: [Hello World](https://github.com/Hantasmagoria/repo-practice) :egg:
+# :wave: [Placeholder](https://github.com/Hantasmagoria/project2) :egg:
 
->Practice repo and prospective sandbox for play-testing new knowledge in the future. Includes templates for future projects. Templates inspired by plenty of sources of unknown origin.
+>Placeholder repo for Project 2 of SEI-F @ General Assembly. Template inspired by plenty of sources of unknown origin.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 ## Installation
 
- This is a practice repo, there will not be any installations.
+ This is a placeholder repo, there will not be any installations.
 
 ## Language support
 
