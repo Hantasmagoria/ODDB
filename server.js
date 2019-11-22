@@ -72,6 +72,7 @@ app.get("/leaderboard", (req, res) => {
       console.log(e);
     } else {
       res.render("show.ejs", {
+        username: req.session.username,
         data: scores,
         loggedIn: req.session.loggedIn
       });

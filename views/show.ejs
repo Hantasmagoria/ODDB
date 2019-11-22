@@ -28,7 +28,7 @@
             </tr>
             <%for(let i=0;i<data.length;i++){%> 
                 <tr>
-                    <td><%=data[i].username%></td>
+                    <td><a href="/user/<%=data[i].username%>"><%=data[i].username%></a></td>
                     <td><%=data[i].score%></td>
                     <td><%=data[i].timing.hours%>h <%=data[i].timing.minutes%>min <%=data[i].timing.seconds%>.<%=data[i].timing.milliseconds%>s</td>
                 </tr>
