@@ -1,0 +1,106 @@
+<script>
+  function validateForm(redirect) {
+    if (redirect == false) {
+      return;
+    }
+    let uname =
+      document.forms["Login" || "Registration" || "Edit"]["username"].value;
+    let upass =
+      document.forms["Login" || "Registration" || "Edit"][
+        "password" || "oldpass"
+      ].value;
+    resetform();
+    //this is if the clientsided validation passes but serversided validation fails.
+    switch (redirect.reason) {
+      case passwords:
+        document.forms["Login" || "Registration"]["password"].classList.toggle(
+          "redbox"
+        );
+        document.forms["Login" || "Registration"][
+          "repassword"
+        ].classList.toggle("redbox");
+        document.getElementById("invalid").classList.toggle("hide");
+        break;
+      case email:
+        document.forms["Login" || "Registration"]["email"].classList.toggle(
+          "redbox"
+        );
+        document.getElementById("invalid").classList.toggle("hide");
+        document.getElementById(
+          "invalid"
+        ).innerText = `'${redirect.body}' is already registered.`;
+        break;
+      case username:
+        document.forms["Login" || "Registration"]["username"].classList.toggle(
+          "redbox"
+        );
+        document.getElementById("invalid").classList.toggle("hide");
+        document.getElementById(
+          "invalid"
+        ).innerText = `'${redirect.body}' is already registered.`;
+        break;
+      default:
+        return true;
+    }
+    if (uname == "" || upass == "") {
+      document.getElementById("validbo").classList.toggle("hide");
+      document.getElementById("blank").classList.toggle("hide");
+      if (
+        uname == "" &&
+        !document.forms["Login" || "Registration"][
+          "username"
+        ].classList.contains("redbox")
+      ) {
+        document.forms["Login" || "Registration"]["username"].classList.toggle(
+          "redbox"
+        );
+      }
+      if (
+        upass == "" &&
+        !document.forms["Login" || "Registration"][
+          "password"
+        ].classList.contains("redbox")
+      ) {
+        document.forms["Login" || "Registration"]["password"].classList.toggle(
+          "redbox"
+        );
+      }
+      return false;
+    }
+  }
+
+  function resetform() {
+    if (!document.getElementById("validbo").classList.contains("hide")) {
+      document.getElementById("validbo").classList.toggle("hide");
+    }
+    if (!document.getElementById("blank").classList.contains("hide")) {
+      document.getElementById("blank").classList.toggle("hide");
+    }
+    if (!document.getElementById("invalid").classList.contains("hide")) {
+      document.getElementById("invalid").classList.toggle("hide");
+    }
+    for (
+      let i = 0,
+        max = document.forms[
+          "Login" || "Registration" || "Edit"
+        ].getElementsByTagName("input").length;
+      i < max;
+      i++
+    ) {
+      if (
+        document.forms["Login" || "Registration" || "Edit"]
+          .getElementsByTagName("input")
+          [i].classList.contains("redbox")
+      ) {
+        document.forms["Login" || "Registration" || "Edit"]
+          .getElementsByTagName("input")
+          [i].classList.toggle("redbox");
+      }
+    }
+  }
+  // if (redirect != "undefined") {
+  //   document.addEventListener("DOMContentLoaded", function() {
+  //     validateForm(redirect);
+  //   });
+  // }
+</script>

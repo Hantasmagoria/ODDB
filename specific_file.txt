@@ -1,6 +1,13 @@
-//Specific file.
-//Not a suspicious file.
+TODO:
 
-Automatically generated documentation.
+-Leaderboard section
 
-test change 
+
+
+
+Questions to ask:
+
+-(q2) how to handle when a user wants to upload their own display picture and forum signature
+-how do I get the validation to go through the database?
+-how do I sanitize the input in the email for the registration phase?
+-how to plug the project into github.io website without essentially copying everything over into the github.io repo?
