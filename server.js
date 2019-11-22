@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 const User = require("./models/users.js");
 const Scores = require("./models/scores.js");
@@ -240,10 +240,7 @@ app.listen(port, () => {
 //   console.log("connected to overdozeDB @ Localhost");
 // });
 
-mongoose.connect(
-  "mongodb+srv://admin:Password01@hantasmagoria-khul3.mongodb.net/overdozeDB?retryWrites=true&w=majority",
-  { useNewUrlParser: true }
-);
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.once("open", () => {
   console.log("connected to overdozeDB @ Mongo Atlas");
 });
