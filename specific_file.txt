@@ -1,11 +1,9 @@
 TODO:
 
--Leaderboard section
 
 
 
-
-Questions to ask:
+to solve:
 
 -(q2) how to handle when a user wants to upload their own display picture and forum signature
 -how do I get the validation to go through the database?

@@ -126,6 +126,7 @@ app.get("/user/:username/edit", (req, res) => {
         console.log(e);
       } else {
         res.render("editProfile.ejs", {
+          loggedIn: req.params.loggedIn,
           playerName: userProfile.username,
           user: userProfile
         });
