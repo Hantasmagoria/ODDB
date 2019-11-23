@@ -249,7 +249,16 @@ app.post("/leaderboard", (req, res) => {
     }
     res.set("Content-Type", "text/html");
     res.send(
-      `<h1>Entry Successful!</h1><br/><p>redirecting...</p><script>setTimeout(function(){ window.location.href = "/"; }, 3000);</script>`
+      `<h1>Entry Successful!</h1><br/><p>redirecting...</p><script>setTimeout(function(){ window.location.href = "/leaderboard"; }, 3000);</script>`
+    );
+  });
+});
+
+app.delete("/leaderboard/del/:id", (req, res) => {
+  Scores.findByIdAndRemove(req.params.id, (err, data) => {
+    res.set("Content-Type", "text/html");
+    res.send(
+      `<h1>Delete Successful!</h1><br/><p>redirecting...</p><script>setTimeout(function(){ window.location.href = "/leaderboard"; }, 3000);</script>`
     );
   });
 });

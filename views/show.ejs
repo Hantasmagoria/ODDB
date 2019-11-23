@@ -31,6 +31,7 @@
                     <td><a href="/user/<%=data[i].username%>"><%=data[i].username%></a></td>
                     <td><%=data[i].score%></td>
                     <td><%=data[i].timing.hours%>h <%=data[i].timing.minutes%>min <%=data[i].timing.seconds%>.<%=data[i].timing.milliseconds%>s</td>
+                    <td><a href="/leaderboard/del/<%=data[i]._id%>" title="Delete this record">x</a></td>
                 </tr>
                 <%}%>
         </table>
