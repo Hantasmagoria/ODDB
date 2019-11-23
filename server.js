@@ -50,6 +50,10 @@ app.get("/user/new", (req, res) => {
   });
 });
 
+app.get("/leaderboard/new", (req, res) => {
+  res.render("entry.ejs");
+});
+
 //Read / Login / Logout Route
 app.post("/user/login", (req, res) => {
   User.findOne({ username: req.body.username }, (e, userProfile) => {
@@ -229,6 +233,25 @@ app.post("/user", (req, res) => {
   } else {
     consistencyCheck(req.body);
   }
+});
+
+app.post("/leaderboard", (req, res) => {
+  chronos = req.body.timing.split("/");
+  req.body.timing = {
+    hours: chronos[0],
+    minutes: chronos[1],
+    seconds: chronos[2],
+    milliseconds: chronos[3]
+  };
+  Scores.create(req.body, (e, leaderBoard) => {
+    if (e) {
+      console.log(e);
+    }
+    res.set("Content-Type", "text/html");
+    res.send(
+      `<h1>Entry Successful!</h1><br/><p>redirecting...</p><script>setTimeout(function(){ window.location.href = "/"; }, 3000);</script>`
+    );
+  });
 });
 
 app.listen(port, () => {
