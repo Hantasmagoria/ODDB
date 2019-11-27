@@ -7,6 +7,7 @@ const Scores = require("./models/scores.js");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const session = require("express-session");
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(
