@@ -4,9 +4,9 @@
 
 ## Demo
 
-![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=jade&up_message=online&url=https%3A%2F%2Foverdozews.herokuapp.com%2F)
+Deployment status: ![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=jade&up_message=online&url=https%3A%2F%2Foverdozews.herokuapp.com%2F)
 
-[Website is being hosted at heroku.](https://overdozews.herokuapp.com/)
+[App is being hosted at heroku.](https://overdozews.herokuapp.com/)
 
 ## Troubleshooting
 
